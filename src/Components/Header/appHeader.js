@@ -6,7 +6,7 @@ import {
   Badge,
   Button,
   Container,
-  Grid,
+  Grid, Icon,
   IconButton,
   Paper,
   Toolbar,
@@ -17,6 +17,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import {Col, Image} from "react-bootstrap";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,14 +65,17 @@ const AppHeader = () => {
       <AppBar>
         <Container>
           <Toolbar>
-            <IconButton
-              edge={"start"}
-              className={classes.menuButton}
-              color={"inherit"}
-              aria-label={"menu"}
-            >
-              <MenuIcon />
-            </IconButton>
+            {/*<IconButton*/}
+            {/*  edge={"start"}*/}
+            {/*  className={classes.menuButton}*/}
+            {/*  color={"inherit"}*/}
+            {/*  aria-label={"menu"}*/}
+            {/*>*/}
+            <Col xs={1} sm={1}>
+
+              <i   />
+            </Col>
+            {/*</IconButton>*/}
             <Typography variant={"h6"} className={classes.title}>
               Guit-Art
             </Typography>

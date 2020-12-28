@@ -9,6 +9,7 @@ import { Grid } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import LayerIcon from "@material-ui/icons/Layers";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import AppModalCards from "../../Modal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,13 +35,17 @@ const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: "56.25%",
   },
+  cardContent: {
+    flexGrow: 1
+  },
 }));
 const cards = [1, 2, 3, 4, 5, 6];
-export default function CardSection() {
+export default function CardSection(props) {
   const classes = useStyles();
 
   return (
     <>
+      <Grid container spacing={4} >
       {cards.map((card) => (
         <Grid item key={card} xs={12} sm={6} md={4}>
           <CardMedia
@@ -52,17 +57,17 @@ export default function CardSection() {
             <Typography>Guitar player</Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button onSubmit={()=>{}} size="small" color="primary">
               Подробнее
             </Button>
-            <Button size="small" color="primary">
-              Подробнее
-            </Button>
-            <LayerIcon />
-            <PlayCircleFilledIcon />
+            {/*<LayerIcon />*/}
+            {/*<PlayCircleFilledIcon />*/}
           </CardActions>
         </Grid>
+
       ))}
+      </Grid>
+      <AppModalCards  />
     </>
   );
 }
